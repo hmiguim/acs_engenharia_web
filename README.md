@@ -1,4 +1,4 @@
-============= Elementos do Grupo
+## Elementos do Grupo
 
 *  Carlos Sotelo
 *  Hugo Guimarães
