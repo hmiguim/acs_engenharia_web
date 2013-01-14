@@ -1,0 +1,82 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#area4#page10" name="User" gr:x="194" gr:y="286">
+  <ContentUnits>
+    <DataUnit id="sv4#area4#page10#dau16" name="User" gr:x="60" gr:y="162" entity="User" displayAttributes="userName email">
+      <Selector id="sv4#area4#page10#dau16#su33" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area4#page10#dau16#su33#kcond17" name="KeyCondition18" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area4#page10#dau16#ln81" name="Link50" to="sv4#area4#page10#pwu15" type="transport" validate="true">
+        <LinkParameter id="sv4#area4#page10#dau16#ln81#par54" name="oid_User" source="data.userOID" target="sv4#area4#page10#pwu15#su35#acond37"/>
+      </Link>
+      <Link id="sv4#area4#page10#dau16#ln82" name="Link50" to="sv4#area4#page10#pwu16" type="transport" validate="true">
+        <LinkParameter id="sv4#area4#page10#dau16#ln82#par55" name="oid_User" source="data.userOID" target="sv4#area4#page10#pwu16#su36#acond39"/>
+      </Link>
+      <Link id="sv4#area4#page10#dau16#ln85" name="Link50" to="sv4#area4#page10#pwu17" type="transport" validate="true">
+        <LinkParameter id="sv4#area4#page10#dau16#ln85#par56" name="oid_User" source="data.userOID" target="sv4#area4#page10#pwu17#su37#acond41"/>
+      </Link>
+    </DataUnit>
+    <PowerIndexUnit id="sv4#area4#page10#pwu15" name="Vende" linkOrder="sv4#area4#page10#pwu15#ln86" gr:x="0" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent1" blockWindow="5" displayAttributes="ent1#att2 ent1#att4 ent1#att6 ent1#att7">
+      <Selector id="sv4#area4#page10#pwu15#su35" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area4#page10#pwu15#su35#acond36" name="Tipo" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att8" value="compro" ignoreCase="true"/>
+        <AttributesCondition id="sv4#area4#page10#pwu15#su35#acond37" name="User" predicate="eq" booleanOperator="or" implied="false" attributes="rel1#role1.userOID"/>
+      </Selector>
+      <Link id="sv4#area4#page10#pwu15#ln86" name="detalhes..." to="sv4#area4#page31#dau8" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="118,-180,-486,136"/>
+    </PowerIndexUnit>
+    <PowerIndexUnit id="sv4#area4#page10#pwu16" name="Compra" linkOrder="sv4#area4#page10#pwu16#ln87" gr:x="250" gr:y="20" sortable="true" checkable="false" useCountQuery="false" entity="ent1" blockWindow="5" displayAttributes="ent1#att2 ent1#att4 ent1#att6 ent1#att7">
+      <Selector id="sv4#area4#page10#pwu16#su36" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area4#page10#pwu16#su36#acond38" name="Tipo" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att8" value="vendo" ignoreCase="true"/>
+        <AttributesCondition id="sv4#area4#page10#pwu16#su36#acond39" name="User" predicate="eq" booleanOperator="or" implied="false" attributes="rel1#role1.userOID"/>
+      </Selector>
+      <Link id="sv4#area4#page10#pwu16#ln87" name="detalhes..." to="sv4#area4#page31#dau8" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="201,-44,-91,115"/>
+    </PowerIndexUnit>
+    <PowerIndexUnit id="sv4#area4#page10#pwu17" name="Troca" linkOrder="sv4#area4#page10#pwu17#ln88" gr:x="260" gr:y="140" sortable="true" checkable="false" useCountQuery="false" entity="ent1" blockWindow="5" displayAttributes="ent1#att2 ent1#att4 ent1#att6 ent1#att7">
+      <Selector id="sv4#area4#page10#pwu17#su37" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area4#page10#pwu17#su37#acond40" name="Tipo" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att8" value="troco" ignoreCase="true"/>
+        <AttributesCondition id="sv4#area4#page10#pwu17#su37#acond41" name="User" predicate="eq" booleanOperator="or" implied="false" attributes="rel1#role1.userOID"/>
+      </Selector>
+      <Link id="sv4#area4#page10#pwu17#ln88" name="detalhes..." to="sv4#area4#page31#dau8" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="234,-122,-51,157"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page10#dau16">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page10#pwu16">
+          <layout:Link link="sv4#area4#page10#pwu16#ln87"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page10#pwu15">
+          <layout:Link link="sv4#area4#page10#pwu15#ln86"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area4#page10#pwu17">
+          <layout:Link link="sv4#area4#page10#pwu17#ln88"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

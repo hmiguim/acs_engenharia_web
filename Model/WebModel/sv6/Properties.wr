@@ -1,0 +1,15 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6" name="Nao_Registado" layout:style="WebRatio" layout:pageLayout="WebRatio/Basic" landmarks="sv6#page24 sv6#area6 sv6#page36" homePage="sv6#page24">
+  <OperationUnits>
+    <LoginUnit gr:x="1090" gr:y="-540" id="sv6#lgu3" name="Login">
+      <KOLink id="sv6#lgu3#kln26" name="KOLink26" to="sv6#page24" automaticCoupling="true" gr:bendpoints="-238,95,351,180"/>
+    </LoginUnit>
+    <CreateUnit gr:x="890" gr:y="-570" id="sv6#cru5" name="Registar Utilizador" entity="User">
+      <OKLink id="sv6#cru5#oln23" name="OKLink23" to="sv6#lgu3">
+        <LinkParameter id="sv6#cru5#oln23#par154" name="userName_Username" source="userNameArray" target="sv6#lgu3.username"/>
+        <LinkParameter id="sv6#cru5#oln23#par155" name="password_Password" source="passwordArray" target="sv6#lgu3.password"/>
+      </OKLink>
+      <KOLink id="sv6#cru5#kln25" name="KOLink25" to="sv6#page24" automaticCoupling="true"/>
+    </CreateUnit>
+    <SetUnit gr:x="10" gr:y="-530" id="sv6#stu4" name="setCategoria" contextParameters="ctx2"/>
+  </OperationUnits>
+</SiteView>

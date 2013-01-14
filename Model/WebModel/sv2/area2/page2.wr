@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area2#page2" name="Categorias" landmark="true" gr:x="152" gr:y="0">
+  <ContentUnits>
+    <EntryUnit id="sv2#area2#page2#enu3" name="Nova Categoria" linkOrder="sv2#area2#page2#enu3#ln38" gr:x="0" gr:y="0">
+      <Field id="sv2#area2#page2#enu3#fld7" name="Nome" modifiable="true" hidden="false" type="string">
+        <VRules>
+          <CollectionValidationRule id="sv2#area2#page2#enu3#fld7#clc1" name="Collection4" predicate="notIn" ignoreCase="true" entity="ent3" attribute="ent3#att14"/>
+        </VRules>
+      </Field>
+      <Link id="sv2#area2#page2#enu3#ln38" name="Criar Categoria" to="sv2#area2#cru1" type="normal" validate="true">
+        <LinkParameter id="sv2#area2#page2#enu3#ln38#par25" name="Nome_Nome" source="sv2#area2#page2#enu3#fld7" target="sv2#area2#cru1.ent3#att14"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="174" gr:y="0" id="sv2#area2#page2#pwu11" name="Categorias" sortable="true" checkable="false" useCountQuery="false" entity="ent3" linkOrder="sv2#area2#page2#pwu11#ln95 sv2#area2#page2#pwu11#ln97" displayAttributes="ent3#att14">
+      <Link id="sv2#area2#page2#pwu11#ln95" name="Eliminar" to="sv2#area2#dlu5" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#area2#page2#pwu11#ln97" name="Editar Categoria" to="sv2#area2#page20#dau17" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area2#page2#pwu11">
+          <layout:Link link="sv2#area2#page2#pwu11#ln95"/>
+          <layout:Link link="sv2#area2#page2#pwu11#ln97"/>
+          <layout:Attribute attribute="ent3#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit label="Enter category" unitId="sv2#area2#page2#enu3">
+          <layout:Field field="sv2#area2#page2#enu3#fld7"/>
+          <layout:Link link="sv2#area2#page2#enu3#ln38"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,56 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="361" gr:y="366" id="sv1#area1#page48" name="Editar Utilizador">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="106" id="sv1#area1#page48#enu26" name="Tipo de Utilizador" linkOrder="sv1#area1#page48#enu26#ln191">
+      <SelectionField id="sv1#area1#page48#enu26#sfld4" name="Tipo de Utilizador" type="string"/>
+      <Link id="sv1#area1#page48#enu26#ln191" name="Alterar Permiss&#245;es" to="sv1#mfu5" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page48#enu26#ln191#par127" name="Tipo de Utilizador_Group.oid(defaultGroup)" source="sv1#area1#page48#enu26#sfld4" target="sv1#mfu5.User2DefaultGroup.groupOID"/>
+      </Link>
+      <Link id="sv1#area1#page48#enu26#ln194" name="Link194" to="sv1#cnu1" type="transport" validate="true" gr:bendpoints="188,121,-275,44">
+        <LinkParameter id="sv1#area1#page48#enu26#ln194#par139" name="Tipo de Utilizador_KeyCondition48 [oid] [Group] [Target]" source="sv1#area1#page48#enu26#sfld4" target="sv1#cnu1#su78#kcond48.groupOID"/>
+      </Link>
+    </EntryUnit>
+    <DataUnit gr:x="4" gr:y="230" id="sv1#area1#page48#dau30" name="Utilizador" entity="User" displayAttributes="userName email">
+      <Selector id="sv1#area1#page48#dau30#su70" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page48#dau30#su70#kcond43" name="KeyCondition43" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page48#dau30#ln190" name="Link190" to="sv1#area1#page48#enu26" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page48#dau30#ln190#par141" name="defaultGroup.oid_Tipo de Utilizador - Preselection" source="data.User2DefaultGroup_groupOID" target="sv1#area1#page48#enu26#sfld4_presel"/>
+      </Link>
+      <Link id="sv1#area1#page48#dau30#ln192" name="Link192" to="sv1#mfu5" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+    <SelectorUnit gr:x="44" gr:y="0" id="sv1#area1#page48#seu8" name="Grupos" entity="Group">
+      <Link id="sv1#area1#page48#seu8#ln189" name="Link189" to="sv1#area1#page48#enu26" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page48#seu8#ln189#par124" name="groupName_Tipo de Utilizador [label]" source="groupNameArray" target="sv1#area1#page48#enu26#sfld4_label"/>
+        <LinkParameter id="sv1#area1#page48#seu8#ln189#par125" name="defaultModule.oid_Tipo de Utilizador [output]" source="groupOIDArray" target="sv1#area1#page48#enu26#sfld4_output"/>
+      </Link>
+      <SortAttribute attribute="groupName" order="ascending"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page48#enu26">
+          <layout:Field field="sv1#area1#page48#enu26#sfld4"/>
+          <layout:Link link="sv1#area1#page48#enu26#ln191"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page48#dau30">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,125 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#page41" name="Home" landmark="true" gr:x="280" gr:y="-658">
+  <ContentUnits>
+    <EntryUnit id="sv1#page41#enu22" name="PesquisaR&#225;pida" customDescriptor="false" gr:x="41" gr:y="276" linkOrder="sv1#page41#enu22#ln168">
+      <Field id="sv1#page41#enu22#fld58" name="Pesquisa" type="string" modifiable="true" contentType="text/plain" preloaded="false" hidden="false"/>
+      <Link id="sv1#page41#enu22#ln168" name="GO!" to="sv1#area8#page46#pwu32" type="normal" validate="true">
+        <LinkParameter id="sv1#page41#enu22#ln168#par119" name="Pesquisa_descricao" source="sv1#page41#enu22#fld58" target="sv1#area8#page46#pwu32#su68#acond55"/>
+        <LinkParameter id="sv1#page41#enu22#ln168#par120" name="Pesquisa_nome" source="sv1#page41#enu22#fld58" target="sv1#area8#page46#pwu32#su68#acond54"/>
+        <LinkParameter id="sv1#page41#enu22#ln168#par121" name="Pesquisa_precoL" source="sv1#page41#enu22#fld58" target="sv1#area8#page46#pwu32#su68#acond58"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit id="sv1#page41#inu13" name="Categorias" linkOrder="sv1#page41#inu13#ln141" gr:x="0" gr:y="46" entity="ent3" displayAttributes="ent3#att14">
+      <Link id="sv1#page41#inu13#ln141" name="set" to="sv1#page41#dau27" type="normal" automaticCoupling="true" validate="true"/>
+    </IndexUnit>
+    <GetUnit id="sv1#page41#gtu17" name="getCategoria" gr:x="151" gr:y="186" contextParameters="ctx2">
+      <Link id="sv1#page41#gtu17#ln147" name="Link149" to="sv1#page41#dau27" type="transport" validate="true">
+        <LinkParameter id="sv1#page41#gtu17#ln147#par116" name="Categoria.idCategoria_KeyCondition43 [idCategoria]" source="sv1#page41#gtu17.ctx2.ent3#att13" target="sv1#page41#dau27#su51#kcond36.ent3#att13"/>
+      </Link>
+    </GetUnit>
+    <DataUnit id="sv1#page41#dau27" name="Categoria" gr:x="149" gr:y="46" entity="ent3" displayAll="true">
+      <Selector id="sv1#page41#dau27#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page41#dau27#su51#kcond36" name="KeyCondition43" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#page41#dau27#ln149" name="Link135" to="sv1#page41#page42#pwu23" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv1#page41#dau27#ln150" name="Link136" to="sv1#page41#page42#pwu21" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="326,-75,-143,-81"/>
+      <Link id="sv1#page41#dau27#ln151" name="Link137" to="sv1#page41#page42#pwu22" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="104,116,-148,-79"/>
+      <Link id="sv1#page41#dau27#ln169" name="Link169" to="sv1#stu11" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#page41#enu22">
+          <layout:Field field="sv1#page41#enu22#fld58"/>
+          <layout:Link link="sv1#page41#enu22#ln168"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv1#page41#inu13">
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Link link="sv1#page41#inu13#ln141"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:SubPage pageId="sv1#page41#page42">
+          <layout:Grid>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv1#page41#page42#pwu21">
+                  <layout:Attribute attribute="ent1#att2"/>
+                  <layout:Attribute attribute="ent1#att4"/>
+                  <layout:Attribute attribute="ent1#att6"/>
+                  <layout:Attribute attribute="rel2#role3.ent3#att14"/>
+                  <layout:Link link="sv1#page41#page42#pwu21#ln176"/>
+                  <layout:Link link="sv1#page41#page42#pwu21ent1#att2"/>
+                  <layout:Link link="sv1#page41#page42#pwu21ent1#att4"/>
+                  <layout:Link link="sv1#page41#page42#pwu21ent1#att6"/>
+                  <layout:Link link="sv1#page41#page42#pwu21rel2#role3$ent3#att14"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell>
+                <layout:Unit unitId="sv1#page41#page42#pwu23">
+                  <layout:Attribute attribute="ent1#att2"/>
+                  <layout:Attribute attribute="ent1#att4"/>
+                  <layout:Attribute attribute="ent1#att6"/>
+                  <layout:Attribute attribute="rel2#role3.ent3#att14"/>
+                  <layout:Link link="sv1#page41#page42#pwu23#ln177"/>
+                </layout:Unit>
+              </layout:Cell>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv1#page41#page42#pwu22">
+                  <layout:Attribute attribute="ent1#att2"/>
+                  <layout:Attribute attribute="ent1#att4"/>
+                  <layout:Attribute attribute="ent1#att6"/>
+                  <layout:Attribute attribute="rel2#role3.ent3#att14"/>
+                  <layout:Link link="sv1#page41#page42#pwu22#ln175"/>
+                  <layout:Link link="sv1#page41#page42#pwu22ent1#att2"/>
+                  <layout:Link link="sv1#page41#page42#pwu22ent1#att4"/>
+                  <layout:Link link="sv1#page41#page42#pwu22ent1#att6"/>
+                  <layout:Link link="sv1#page41#page42#pwu22rel2#role3$ent3#att14"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <Page id="sv1#page41#page42" name="Destaques" gr:x="374" gr:y="0">
+    <ContentUnits>
+      <PowerIndexUnit id="sv1#page41#page42#pwu21" name="COMPRAR AGORA" gr:x="204" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att6 rel2#role3.ent3#att14" blockWindow="5" linkOrder="sv1#page41#page42#pwu21#ln176">
+        <Selector id="sv1#page41#page42#pwu21#su52" defaultPolicy="fill" booleanOperator="and">
+          <AttributesCondition id="sv1#page41#page42#pwu21#su52#acond31" name="Destaque" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att15" ignoreCase="false" value="1"/>
+          <AttributesCondition id="sv1#page41#page42#pwu21#su52#acond32" name="Tipo" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att8" value="Vendo" ignoreCase="true"/>
+          <RelationshipRoleCondition id="sv1#page41#page42#pwu21#su52#rcond22" name="RoleCondition13" predicate="in" implied="true" role="rel2#role4"/>
+        </Selector>
+        <SortAttribute attribute="ent1#att2" order="ascending"/>
+        <SortAttribute attribute="ent1#att4" order="ascending"/>
+        <SortAttribute attribute="ent1#att6" order="ascending"/>
+        <SortAttribute attribute="rel2#role3.ent3#att14" order="ascending"/>
+        <Link id="sv1#page41#page42#pwu21#ln176" name="detalhes..." to="sv1#area8#page30#dau25" automaticCoupling="true" type="normal" validate="true"/>
+      </PowerIndexUnit>
+      <PowerIndexUnit id="sv1#page41#page42#pwu22" name="TROCAR AGORA" gr:x="64" gr:y="160" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att6 rel2#role3.ent3#att14" blockWindow="5" linkOrder="sv1#page41#page42#pwu22#ln175">
+        <Selector id="sv1#page41#page42#pwu22#su54" defaultPolicy="fill" booleanOperator="and">
+          <AttributesCondition id="sv1#page41#page42#pwu22#su54#acond33" name="Destaque" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att15" ignoreCase="false" value="1"/>
+          <AttributesCondition id="sv1#page41#page42#pwu22#su54#acond34" name="Tipo" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att8" value="TROCO" ignoreCase="true"/>
+          <RelationshipRoleCondition id="sv1#page41#page42#pwu22#su54#rcond23" name="RoleCondition13" predicate="in" implied="true" role="rel2#role4"/>
+        </Selector>
+        <SortAttribute attribute="ent1#att2" order="ascending"/>
+        <SortAttribute attribute="ent1#att4" order="ascending"/>
+        <SortAttribute attribute="ent1#att6" order="ascending"/>
+        <SortAttribute attribute="rel2#role3.ent3#att14" order="ascending"/>
+        <Link id="sv1#page41#page42#pwu22#ln175" name="detalhes..." to="sv1#area8#page30#dau25" automaticCoupling="true" type="normal" validate="true"/>
+      </PowerIndexUnit>
+      <PowerIndexUnit id="sv1#page41#page42#pwu23" name="VENDER AGORA" gr:x="0" gr:y="9" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att6 rel2#role3.ent3#att14" blockWindow="5" linkOrder="sv1#page41#page42#pwu23#ln177">
+        <Selector id="sv1#page41#page42#pwu23#su55" defaultPolicy="fill" booleanOperator="and">
+          <AttributesCondition id="sv1#page41#page42#pwu23#su55#acond35" name="Destaque" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att15" ignoreCase="false" value="1"/>
+          <AttributesCondition id="sv1#page41#page42#pwu23#su55#acond48" name="Tipo" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att8" value="COMPRO" ignoreCase="true"/>
+          <RelationshipRoleCondition id="sv1#page41#page42#pwu23#su55#rcond24" name="RoleCondition13" predicate="in" implied="true" role="rel2#role4"/>
+        </Selector>
+        <Link id="sv1#page41#page42#pwu23#ln177" name="detalhes..." to="sv1#area8#page30#dau25" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="146,86,-234,-589"/>
+      </PowerIndexUnit>
+    </ContentUnits>
+  </Page>
+</Page>

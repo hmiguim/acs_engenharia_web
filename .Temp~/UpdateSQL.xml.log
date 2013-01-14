@@ -1,0 +1,26 @@
+[13 Jan 2013 19:08:00] DEBUG Executing SQL script
+[13 Jan 2013 19:08:00] INFO ================================================================================
+[13 Jan 2013 19:08:00] INFO onError= 'continue'
+[13 Jan 2013 19:08:00] INFO autoCommit= 'false'
+[13 Jan 2013 19:08:00] INFO username= 'root'
+[13 Jan 2013 19:08:00] INFO outputPath= 'C:\Users\Sotelo\Documents\WebRatioDocs\EW\.Temp~\UpdateSQL.xml'
+[13 Jan 2013 19:08:00] INFO outputLogPath= 'C:\Users\Sotelo\Documents\WebRatioDocs\EW\.Temp~\UpdateSQL.xml.log'
+[13 Jan 2013 19:08:00] INFO encoding= ''
+[13 Jan 2013 19:08:00] INFO driverClass= 'com.mysql.jdbc.Driver'
+[13 Jan 2013 19:08:00] INFO sqlScript= 'C:\Users\Sotelo\Documents\WebRatioDocs\EW\.Temp~\UpdateSQL.sql'
+[13 Jan 2013 19:08:00] INFO eventSocketPort= '56240'
+[13 Jan 2013 19:08:00] INFO statementSeparator= ';'
+[13 Jan 2013 19:08:00] INFO derby.system.home= 'C:\Users\Sotelo\Documents\WebRatioDocs\.metadata\.plugins\com.webratio.commons.db\derby'
+[13 Jan 2013 19:08:00] INFO password= 'JU831ABK'
+[13 Jan 2013 19:08:00] INFO url= 'jdbc:mysql://localhost:3307/ewProj'
+[13 Jan 2013 19:08:00] INFO ================================================================================
+[13 Jan 2013 19:08:00] INFO Connecting to the Database...
+[13 Jan 2013 19:08:00] INFO Database connection estabilished
+[13 Jan 2013 19:08:00] INFO transaction isolation: 4
+[13 Jan 2013 19:08:00] DEBUG ================================================================================
+[13 Jan 2013 19:08:00] DEBUG Executing SQL script file: C:\Users\Sotelo\Documents\WebRatioDocs\EW\.Temp~\UpdateSQL.sql
+[13 Jan 2013 19:08:00] DEBUG Executing statement:  alter table `imagem`  add column  `thumbnail`  varchar(255)
+[13 Jan 2013 19:08:01] DEBUG ================================================================================
+[13 Jan 2013 19:08:01] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[13 Jan 2013 19:08:01] INFO Database connection closed
+[13 Jan 2013 19:08:01] DEBUG Total time: 1321 milliseconds
