@@ -1,0 +1,38 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area8#page45" name="Pesquisa Avan&#231;ada" landmark="true" gr:x="506" gr:y="0">
+  <ContentUnits>
+    <EntryUnit id="sv1#area8#page45#enu25" name="Pesquisa" linkOrder="sv1#area8#page45#enu25#ln164" gr:x="0" gr:y="0" fieldOrder="sv1#area8#page45#enu25#fld72 sv1#area8#page45#enu25#fld73 sv1#area8#page45#enu25#fld74 sv1#area8#page45#enu25#fld75 sv1#area8#page45#enu25#fld80">
+      <Field id="sv1#area8#page45#enu25#fld72" name="Nome:" type="string" modifiable="true"/>
+      <Field id="sv1#area8#page45#enu25#fld73" name="Descri&#231;&#227;o:" type="string" modifiable="true"/>
+      <Field id="sv1#area8#page45#enu25#fld74" name="At&#233; (&#8364;):" type="float" modifiable="true"/>
+      <Field id="sv1#area8#page45#enu25#fld75" name="A partir de dia:" type="date" modifiable="true"/>
+      <Field id="sv1#area8#page45#enu25#fld80" name="At&#233; dia :" type="date" modifiable="true" preloaded="false"/>
+      <Link id="sv1#area8#page45#enu25#ln164" name="Link131" to="sv1#area8#page46#pwu32" type="normal" automaticCoupling="true" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area8#page45#enu25">
+          <layout:Field field="sv1#area8#page45#enu25#fld72"/>
+          <layout:Field field="sv1#area8#page45#enu25#fld73"/>
+          <layout:Field field="sv1#area8#page45#enu25#fld74"/>
+          <layout:Field field="sv1#area8#page45#enu25#fld75"/>
+          <layout:Field field="sv1#area8#page45#enu25#fld80"/>
+          <layout:Link link="sv1#area8#page45#enu25#ln164"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

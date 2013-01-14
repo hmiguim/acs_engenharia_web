@@ -1,0 +1,44 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="496" gr:y="16" id="sv6#area6#page26" name="Pesquisa Avan&#231;ada" landmark="true">
+  <ContentUnits>
+    <EntryUnit id="sv6#area6#page26#enu21" name="Pesquisa Avan&#231;ada" linkOrder="sv6#area6#page26#enu21#ln148" gr:x="0" gr:y="0" fieldOrder="sv6#area6#page26#enu21#fld65 sv6#area6#page26#enu21#fld66 sv6#area6#page26#enu21#fld67 sv6#area6#page26#enu21#fld68 sv6#area6#page26#enu21#fld69">
+      <Field id="sv6#area6#page26#enu21#fld65" name="Nome:" type="string" modifiable="true"/>
+      <Field id="sv6#area6#page26#enu21#fld66" name="Descri&#231;&#227;o:" type="string" modifiable="true"/>
+      <Field id="sv6#area6#page26#enu21#fld67" name="At&#233; (&#8364;):" type="float" modifiable="true"/>
+      <Field id="sv6#area6#page26#enu21#fld68" name="A partir de dia:" type="date" modifiable="true"/>
+      <Field id="sv6#area6#page26#enu21#fld69" name="At&#233; dia :" type="date" modifiable="true" preloaded="false"/>
+      <Link id="sv6#area6#page26#enu21#ln148" name="Pesquisar" to="sv6#area6#page15#pwu24" type="normal" validate="true">
+        <LinkParameter id="sv6#area6#page26#enu21#ln148#par132" name="dataSubmissaoG_dataG" source="sv6#area6#page26#enu21#fld68" target="sv6#area6#page15#pwu24#su58#acond70"/>
+        <LinkParameter id="sv6#area6#page26#enu21#ln148#par133" name="dataSubmissaoL_dataL" source="sv6#area6#page26#enu21#fld69" target="sv6#area6#page15#pwu24#su58#acond71"/>
+        <LinkParameter id="sv6#area6#page26#enu21#ln148#par134" name="descricao_descricao" source="sv6#area6#page26#enu21#fld66" target="sv6#area6#page15#pwu24#su58#acond69"/>
+        <LinkParameter id="sv6#area6#page26#enu21#ln148#par135" name="nome_nome" source="sv6#area6#page26#enu21#fld65" target="sv6#area6#page15#pwu24#su58#acond68"/>
+        <LinkParameter id="sv6#area6#page26#enu21#ln148#par136" name="precoL_precoL" source="sv6#area6#page26#enu21#fld67" target="sv6#area6#page15#pwu24#su58#acond72"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv6#area6#page26#enu21">
+          <layout:Field field="sv6#area6#page26#enu21#fld65"/>
+          <layout:Field field="sv6#area6#page26#enu21#fld66"/>
+          <layout:Field field="sv6#area6#page26#enu21#fld67"/>
+          <layout:Field field="sv6#area6#page26#enu21#fld68"/>
+          <layout:Field field="sv6#area6#page26#enu21#fld69"/>
+          <layout:Link link="sv6#area6#page26#enu21#ln148"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

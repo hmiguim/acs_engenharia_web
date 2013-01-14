@@ -1,0 +1,63 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area8#page46" name="Lista An&#250;ncios" landmark="true" gr:x="0" gr:y="14">
+  <ContentUnits>
+    <PowerIndexUnit id="sv1#area8#page46#pwu32" name="Lista An&#250;ncios" customDescriptor="false" gr:x="240" gr:y="0" sortable="true" checkable="false" useCountQuery="true" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att6 ent1#att8 rel2#role3.ent3#att14" blockFactor="10" linkOrder="sv1#area8#page46#pwu32#ln212">
+      <Selector id="sv1#area8#page46#pwu32#su68" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="sv1#area8#page46#pwu32#su68#acond54" name="nome" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att2" ignoreCase="true"/>
+        <AttributesCondition id="sv1#area8#page46#pwu32#su68#acond55" name="descricao" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att3" ignoreCase="true"/>
+        <AttributesCondition id="sv1#area8#page46#pwu32#su68#acond56" name="dataG" predicate="gteq" booleanOperator="or" implied="true" attributes="ent1#att6" ignoreCase="true"/>
+        <AttributesCondition id="sv1#area8#page46#pwu32#su68#acond57" name="dataL" predicate="lteq" booleanOperator="or" implied="true" attributes="ent1#att6" ignoreCase="true"/>
+        <AttributesCondition id="sv1#area8#page46#pwu32#su68#acond58" name="precoL" predicate="lteq" booleanOperator="or" implied="true" attributes="ent1#att4" ignoreCase="true"/>
+        <RelationshipRoleCondition id="sv1#area8#page46#pwu32#su68#rcond26" name="RoleCondition13" predicate="in" implied="true" role="rel2#role4"/>
+      </Selector>
+      <SortAttribute attribute="ent1#att6" order="descending"/>
+      <SortAttribute attribute="ent1#att8" order="ascending"/>
+      <SortAttribute attribute="ent1#att2" order="ascending"/>
+      <SortAttribute attribute="ent1#att4" order="ascending"/>
+      <Link id="sv1#area8#page46#pwu32#ln212" name="detalhes..." to="sv1#area8#page30#dau25" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <DataUnit id="sv1#area8#page46#dau29" name="Categoria" gr:x="140" gr:y="80" entity="ent3" displayAll="true">
+      <Selector id="sv1#area8#page46#dau29#su69" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area8#page46#dau29#su69#kcond41" name="KeyCondition43" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area8#page46#dau29#ln165" name="Link130" to="sv1#area8#page46#pwu32" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv1#area8#page46#dau29#ln172" name="Link172" to="sv1#stu11" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="-349,-14,0,226"/>
+    </DataUnit>
+    <IndexUnit id="sv1#area8#page46#inu15" name="Categorias" linkOrder="sv1#area8#page46#inu15#ln166" gr:x="0" gr:y="10" entity="ent3" displayAttributes="ent3#att14">
+      <Link id="sv1#area8#page46#inu15#ln166" name="set" to="sv1#area8#page46#dau29" type="normal" automaticCoupling="true" validate="true"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area8#page46#inu15">
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Link link="sv1#area8#page46#inu15#ln166"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area8#page46#pwu32" manualLinks="true" manualLinkOrder="sv1#area8#page46#pwu32ent1#att6 sv1#area8#page46#pwu32ent1#att8 sv1#area8#page46#pwu32ent1#att2 sv1#area8#page46#pwu32ent1#att4 sv1#area8#page46#pwu32First sv1#area8#page46#pwu32Previous sv1#area8#page46#pwu32Next">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="rel2#role3.ent3#att14"/>
+          <layout:Link link="sv1#area8#page46#pwu32ent1#att6"/>
+          <layout:Link link="sv1#area8#page46#pwu32ent1#att8"/>
+          <layout:Link link="sv1#area8#page46#pwu32ent1#att2"/>
+          <layout:Link link="sv1#area8#page46#pwu32ent1#att4"/>
+          <layout:Link link="sv1#area8#page46#pwu32First"/>
+          <layout:Link link="sv1#area8#page46#pwu32Previous"/>
+          <layout:Link link="sv1#area8#page46#pwu32Next"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area8#page46#dau29">
+          <layout:Attribute attribute="ent3#att14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

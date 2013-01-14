@@ -1,0 +1,55 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="880" gr:y="-770" id="sv6#page36" name="Criar Conta" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="-1" gr:y="0" id="sv6#page36#enu24" name="Criar Nova Conta" linkOrder="sv6#page36#enu24#ln179">
+      <Field id="sv6#page36#enu24#fld76" name="UserName" type="string" modifiable="true">
+        <VRules>
+          <CollectionValidationRule id="sv6#page36#enu24#fld76#clc5" name="Collection5" predicate="notIn" ignoreCase="true" entity="User" attribute="userName"/>
+        </VRules>
+      </Field>
+      <Field id="sv6#page36#enu24#fld77" name="Password" type="password" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv6#page36#enu24#fld77#vl4" name="Value Length4" predicate="min" value="5"/>
+        </VRules>
+      </Field>
+      <Field id="sv6#page36#enu24#fld78" name="E-Mail" type="url" modifiable="true" contentType="email">
+        <VRules/>
+      </Field>
+      <Link id="sv6#page36#enu24#ln179" name="Criar Conta" to="sv6#cru5" type="normal" validate="true">
+        <LinkParameter id="sv6#page36#enu24#ln179#par150" name="email_email" source="sv6#page36#enu24#fld78" target="sv6#cru5.email"/>
+        <LinkParameter id="sv6#page36#enu24#ln179#par151" name="password_password" source="sv6#page36#enu24#fld77" target="sv6#cru5.password"/>
+        <LinkParameter id="sv6#page36#enu24#ln179#par152" name="userName_userName" source="sv6#page36#enu24#fld76" target="sv6#cru5.userName"/>
+        <LinkParameter id="sv6#page36#enu24#ln179#par153" name="1_Group.oid(defaultGroup)" sourceValue="1" target="sv6#cru5.User2DefaultGroup.groupOID"/>
+      </Link>
+      <Field id="sv6#page36#enu24#fld79" name="Captcha" type="string" modifiable="true">
+        <VRules>
+          <CaptchaValidationRule id="sv6#page36#enu24#fld79#captcha2" name="Captcha1" cfg_ignoreCase="true" cfg_minLength="3" cfg_maxLength="4"/>
+        </VRules>
+      </Field>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv6#page36#enu24">
+          <layout:Link link="sv6#page36#enu24#ln179"/>
+          <layout:Field field="sv6#page36#enu24#fld76"/>
+          <layout:Field field="sv6#page36#enu24#fld77"/>
+          <layout:Field field="sv6#page36#enu24#fld78"/>
+          <layout:Field field="sv6#page36#enu24#fld79"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

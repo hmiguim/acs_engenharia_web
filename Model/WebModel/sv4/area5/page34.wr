@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="278" id="sv4#area5#page34" name="Perfil" landmark="true">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv4#area5#page34#dau9" name="User" entity="User" linkOrder="sv4#area5#page34#dau9#ln102" displayAttributes="userName password email">
+      <Link id="sv4#area5#page34#dau9#ln102" name="Editar Perfil" to="sv4#area5#page39#dau5" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#area5#page34#dau9#ln22" name="Link22" to="sv4#cru2" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="-128,54,-112,-355;-107,428,-149,-8"/>
+      <Selector id="sv4#area5#page34#dau9#su32" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area5#page34#dau9#su32#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit gr:x="96" gr:y="74" id="sv4#area5#page34#gtu8" name="User" contextParameters="UserCtxParam">
+      <Link id="sv4#area5#page34#gtu8#ln71" name="Link71" to="sv4#area5#page34#dau9" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area5#page34#dau9">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Link link="sv4#area5#page34#dau9#ln102"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

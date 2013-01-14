@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.PowerIndexUnitService" name="Resultados da Pesquisa">
+  <Results maxResults="" blockFactor="5" blockWindow=""/>
+  <SortHistorySize>1</SortHistorySize>
+  <Checkable>false</Checkable>
+  <Query entity="ent1">
+    <Input id="p0" param="acond76" type="string" implied="true" impliedText="1 = 0" expandStyle="or" prefixValue="%" suffixValue="%" attribute="att2"/>
+    <Input id="p1" param="acond77" type="string" implied="true" impliedText="1 = 0" expandStyle="or" prefixValue="%" suffixValue="%" attribute="att3"/>
+    <Input id="p2" param="acond78" type="date" implied="true" impliedText="1 = 0" expandStyle="aggregate" function="min" attribute="att6"/>
+    <Input id="p3" param="acond79" type="date" implied="true" impliedText="1 = 0" expandStyle="aggregate" function="max" attribute="att6"/>
+    <Input id="p4" param="acond80" type="float" implied="true" impliedText="1 = 0" expandStyle="aggregate" function="max" attribute="att4"/>
+    <Output id="att1" name="idAnuncio"/>
+    <Output id="att8" name="tipo"/>
+    <Output id="att6" name="dataSubmissao"/>
+    <Output id="att4" name="preco"/>
+    <Output id="att2" name="nome"/>
+    <Output id="role3$att14" name="anuncioToCategoria_nome" useId="true"/>
+    <HQL>select a_anuncio.idAnuncio, a_anuncio.tipo, a_anuncio.dataSubmissao, a_anuncio.preco, a_anuncio.nome, a_categoria_role3.nome from Anuncio a_anuncio left join a_anuncio.anuncioToCategoria a_categoria_role3
+      <Where defaultPolicy="fill" allImplied="true">(({[p0]upper(safe_cast(a_anuncio.nome)) like upper(safe_cast(?))})) or (({[p1]upper(safe_cast(a_anuncio.descricao)) like upper(safe_cast(?))})) or (({[p2]a_anuncio.dataSubmissao &gt;= ?})) or (({[p3]a_anuncio.dataSubmissao &lt;= ?})) or (({[p4]a_anuncio.preco &lt;= ?}))</Where>order by $$SORT_CRITERIA$$
+    </HQL>
+    <Count>select count(*) from Anuncio a_anuncio left join a_anuncio.anuncioToCategoria a_categoria_role3
+      <Where defaultPolicy="fill" allImplied="true">(({[p0]upper(safe_cast(a_anuncio.nome)) like upper(safe_cast(?))})) or (({[p1]upper(safe_cast(a_anuncio.descricao)) like upper(safe_cast(?))})) or (({[p2]a_anuncio.dataSubmissao &gt;= ?})) or (({[p3]a_anuncio.dataSubmissao &lt;= ?})) or (({[p4]a_anuncio.preco &lt;= ?}))</Where>
+    </Count>
+  </Query>
+  <SortAttributes>
+    <Attribute id="att6" dynamic="true" order="desc">a_anuncio.dataSubmissao</Attribute>
+    <Attribute id="att8" dynamic="true" order="asc">a_anuncio.tipo</Attribute>
+    <Attribute id="att2" dynamic="true" order="asc">a_anuncio.nome</Attribute>
+    <Attribute id="att4" dynamic="true" order="asc">a_anuncio.preco</Attribute>
+    <Attribute id="att6" dynamic="false" order="desc">a_anuncio.dataSubmissao</Attribute>
+    <Attribute id="att8" dynamic="false" order="asc">a_anuncio.tipo</Attribute>
+    <Attribute id="att2" dynamic="false" order="asc">a_anuncio.nome</Attribute>
+    <Attribute id="att4" dynamic="false" order="asc">a_anuncio.preco</Attribute>
+  </SortAttributes>
+  <WRValidation links="ln83"/>
+</Descriptor>
