@@ -1,0 +1,67 @@
+<DataModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="60" gr:hideAttributes="false" attributeOrder="userOID userName password email">
+    <Attribute name="oid" id="userOID" type="integer" key="true"/>
+    <Attribute name="userName" id="userName" type="string"/>
+    <Attribute name="password" id="password" type="password"/>
+    <Attribute name="email" id="email" type="string"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="140" gr:hideAttributes="false" attributeOrder="groupOID groupName">
+    <Attribute name="oid" id="groupOID" type="integer" key="true"/>
+    <Attribute name="groupName" id="groupName" type="string"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="500" gr:y="130" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
+    <Attribute name="moduleID" id="moduleID" type="string"/>
+    <Attribute name="moduleName" id="moduleName" type="string"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N"/>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N"/>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1"/>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N"/>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1"/>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N"/>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
+  </Relationship>
+  <Entity gr:x="90" gr:y="250" id="ent1" name="Anuncio" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att9 ent1#att6 ent1#att7 ent1#att8">
+    <Attribute id="ent1#att1" key="true" name="idAnuncio" type="integer">
+      <Property id="ent1#att1#prop1" name="Property 1"/>
+    </Attribute>
+    <Attribute id="ent1#att2" name="nome" type="string"/>
+    <Attribute id="ent1#att3" name="descricao" type="string"/>
+    <Attribute id="ent1#att4" name="preco" type="string"/>
+    <Attribute id="ent1#att5" name="idUtilizador" type="integer"/>
+    <Attribute id="ent1#att6" name="dataSubmissao" type="date"/>
+    <Attribute id="ent1#att7" name="activo" type="integer"/>
+    <Attribute id="ent1#att8" name="tipo" type="string"/>
+    <Attribute id="ent1#att9" name="idCategoria" type="integer"/>
+  </Entity>
+  <Entity gr:x="440" gr:y="300" id="ent2" name="Imagem" duration="persistent" attributeOrder="ent2#att10 ent2#att11 ent2#att12">
+    <Attribute id="ent2#att10" key="true" name="idImagem" type="integer"/>
+    <Attribute id="ent2#att11" name="source" type="string"/>
+    <Attribute id="ent2#att12" name="idAnuncio" type="integer"/>
+  </Entity>
+  <Entity gr:x="430" gr:y="420" id="ent3" name="Categoria" duration="persistent" attributeOrder="ent3#att13 ent3#att14">
+    <Attribute id="ent3#att13" key="true" name="idCategoria" type="integer"/>
+    <Attribute id="ent3#att14" name="descricao" type="string"/>
+  </Entity>
+  <Relationship id="rel2" name="Anuncio_Categoria" sourceEntity="ent1" targetEntity="ent3">
+    <RelationshipRole1 id="rel2#role3" name="AnuncioToCategoria" maxCard="1"/>
+    <RelationshipRole2 id="rel2#role4" name="CategoriaToAnuncio" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel3" name="Anuncio_Imagem" sourceEntity="ent1" targetEntity="ent2">
+    <RelationshipRole1 id="rel3#role5" name="AnuncioToImagem" maxCard="1"/>
+    <RelationshipRole2 id="rel3#role6" name="ImagemToAnuncio" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel4" name="Anuncio_Group" sourceEntity="ent1" targetEntity="Group">
+    <RelationshipRole1 id="rel4#role7" name="AnuncioToGroup" maxCard="1"/>
+    <RelationshipRole2 id="rel4#role8" name="GroupToAnuncio" maxCard="1"/>
+  </Relationship>
+</DataModel>

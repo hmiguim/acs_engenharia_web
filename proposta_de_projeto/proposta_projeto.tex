@@ -1,0 +1,55 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[applemac]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{indentfirst}
+
+\def\alunoa{Carlos Sotelo}
+\def\alunob{Hugo Guimarães}
+\def\alunoc{João Sarmento}
+\def\alunod{Luís Machado}
+\def\alunoe{Raphael Rodrigues}
+\def\data{Outubro, 2012}
+
+\title{\Huge Sistema de Classificados Online\large \\ Engenharia Web - Mestrado em Engenharia Informática \\ \normalsize Universidade do Minho}
+\author{\alunoa \\ \alunob \\ \alunoc \\ \alunod \\ \alunoe}
+\date{\data}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introdução}
+\subsection{Contextualização}
+\indent Numa sociedade consumista e moderna como é a nossa, o que hoje é tecnologia de ponta amanhã é apenas mais um objeto tecnológico. A necessidade de vender, comprar ou trocar produtos tem por isso um peso importante na nossa sociedade.
+\newline\indent Essa realidade levou ao aparecimento de aplicações web com a finalidade de explorar esse consumismo facilitando a compra, venda ou mesmo troca desses produtos. Mas essas aplicações, pelo facto de serem fáceis de usar, ficaram inundadas de anúncios sem nexo o que levou a que outros anúncios mais sérios não passassem a uma fase de negócio por serem difíceis de encontrar. 
+\newline\indent Este acaba por ser o mote que nos levou a criar uma aplicação web com a ﬁnalidade de facilitar a compra, venda ou troca desses produtos com a diferença que, para além de haver moderação dos anúncios, à também uma “pré filtragem” dos mesmo, sendo que antes de tornar um anúncio público, o utilizador será confrontado com propostas opostas, isto é, se anunciamos uma venda somos confrontados com anúncios de compra de um artigo igual ou parecido e vice-versa. Ou então propostas semelhantes para evitar anúncios incongruentes, por exemplo, caso tentemos vender algo com uma grande discrepância no preço. Ou mesmo anúncios desnecessários, por exemplo, o caso em que temos anúncios de compra para uma venda que nos propomos fazer.
+
+\section{Aplicação a desenvolver}
+A aplicação consiste num sistema de classificados online capaz de fornecer ao utilizador funcionalidades presentes noutros serviços do género. 
+De um modo geral, permitirá ao utilizador colocar anúncios para a venda de produtos, pesquisar quem está a vender um determinado artigo, colocar um anúncio para a compra de um determinado produto.
+Haverá 3 entidades distintas na aplicação:
+\begin{itemize}
+\item \textbf{Administradora} - responsável por eliminar utilizadores que não obedeçam às regras da aplicação;
+\item \textbf{Moderadora} - esponsável pela moderação dos anúncios, não permitindo a colocação de anúncios que não estejam nas regras da aplicação;
+\item \textbf{Normal} - utilizador da aplicação, que coloca ou procura anúncios.
+\end{itemize}
+
+\indent Um utilizador não registado no sistema poderá fazer pesquisas no sistema mediante um ou vários parâmetros, mas para ter acesso a todas as funcionalidades da aplicação deverá passar por um processo de registo no sistema, registo este com o intuíto de moderar os anúncios colocados pelos utilizadores.
+\newline\indent A aplicação deverá ser capaz de:
+\begin{itemize}
+\item Permitir ao utilizador mostrar os anúncios
+\item Permitir ao utilizador criar um anúncio;
+\item Permitir ao utilizador editar o seu anúncio;
+\item Permitir ao utilizador encontrar um anúncio mediante um ou vários parâmetros.
+\end{itemize}
+
+\section{Tecnologias}
+Para o desenvolvimento desta aplicação serão usadas linguagens de programação orientadas à web e com uma arquitetura tipicamente \textit{Model-view-controller} (MVC). Será usada uma base de dados para o armazenamento de todo o tipo de informação que a aplicação possa necessitar. Para o controlo de versões será usada a ferramenta \textit{Git} e criado um repositório público na plataforma \textit{GitHub}.
+
+\section{Considerações finais}
+Apresentado o problema, proposta a solução e utilizando metodologias de engenharia de software aplicadas à web é pretendido criar uma aplicação robusta e com todas as características acima descritas. Olhando para a natureza do projeto é de salientar que, uma vez bem implementado, o projeto pode facilmente passar de um mundo académico para um contexto global originando um serviço.
+\end{document}
