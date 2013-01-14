@@ -1,9 +1,0 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1#area8" name="An&#250;ncios" landmark="true" gr:x="241" gr:y="-224" landmarks="sv1#area8#page45 sv1#area8#page46" defaultPage="sv1#area8#page46">
-  <OperationUnits>
-    <GetUnit id="sv1#area8#gtu19" name="getCategoria" gr:x="1" gr:y="276" contextParameters="ctx2">
-      <Link id="sv1#area8#gtu19#ln167" name="Link149" to="sv1#area8#page46#dau29" type="transport" validate="true">
-        <LinkParameter id="sv1#area8#gtu19#ln167#par118" name="Categoria.idCategoria_KeyCondition43 [idCategoria]" source="sv1#area8#gtu19.ctx2.ent3#att13" target="sv1#area8#page46#dau29#su69#kcond41.ent3#att13"/>
-      </Link>
-    </GetUnit>
-  </OperationUnits>
-</Area>
