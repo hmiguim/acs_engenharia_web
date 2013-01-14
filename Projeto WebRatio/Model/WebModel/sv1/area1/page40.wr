@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="165" id="sv1#area1#page40" name="Gest&#227;o Utilizadores" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="1" gr:y="103" id="sv1#area1#page40#inu12" name="Utilizadores" entity="User" displayAttributes="userName email User2DefaultGroup.groupName" linkOrder="sv1#area1#page40#inu12#ln187">
+      <Selector id="sv1#area1#page40#inu12#su50" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="sv1#area1#page40#inu12#su50#acond30" name="username" predicate="contains" booleanOperator="or" implied="true" attributes="userName"/>
+        <AttributesCondition id="sv1#area1#page40#inu12#su50#acond59" name="email" predicate="contains" booleanOperator="or" implied="true" attributes="userName"/>
+        <AttributesCondition id="sv1#area1#page40#inu12#su50#acond85" name="AttCondition85" predicate="eq" booleanOperator="or" implied="true" attributes="User2DefaultGroup.groupOID"/>
+      </Selector>
+      <SortAttribute attribute="userName" order="ascending"/>
+      <Link id="sv1#area1#page40#inu12#ln187" name="Editar Utilizador" to="sv1#area1#page48#dau30" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-7,142,-111,-36"/>
+    </IndexUnit>
+    <EntryUnit gr:x="0" gr:y="2" id="sv1#area1#page40#enu16" name="Filtro Utilizadores" linkOrder="sv1#area1#page40#enu16#ln180">
+      <Field id="sv1#area1#page40#enu16#fld54" name="UserName:" type="string" modifiable="true"/>
+      <Field id="sv1#area1#page40#enu16#fld57" name="E-Mail:" type="string" modifiable="true"/>
+      <Link id="sv1#area1#page40#enu16#ln180" name="Filtrar" to="sv1#area1#page40#inu12" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page40#enu16#ln180#par122" name="E-Mail:_email" source="sv1#area1#page40#enu16#fld57" target="sv1#area1#page40#inu12#su50#acond59"/>
+        <LinkParameter id="sv1#area1#page40#enu16#ln180#par123" name="UserName:_username" source="sv1#area1#page40#enu16#fld54" target="sv1#area1#page40#inu12#su50#acond30"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit gr:x="256" gr:y="130" id="sv1#area1#page40#inu16" name="Grupos" entity="Group" displayAttributes="groupName" linkOrder="sv1#area1#page40#inu16#ln195">
+      <Link id="sv1#area1#page40#inu16#ln195" name="ver Grupo" to="sv1#area1#page40#dau32" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page40#inu16#ln195#par156" name="oid_KeyCondition50 [oid]" source="data[].groupOID" target="sv1#area1#page40#dau32#su94#kcond50.groupOID"/>
+      </Link>
+    </IndexUnit>
+    <DataUnit gr:x="166" gr:y="0" id="sv1#area1#page40#dau32" name="Grupo" entity="Group" displayAttributes="groupName">
+      <Selector id="sv1#area1#page40#dau32#su94" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page40#dau32#su94#kcond50" name="KeyCondition50" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page40#dau32#ln205" name="Link205" to="sv1#area1#page40#inu12" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page40#dau32#ln205#par157" name="oid_AttCondition85" source="data.groupOID" target="sv1#area1#page40#inu12#su50#acond85"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page40#enu16">
+          <layout:Field field="sv1#area1#page40#enu16#fld54"/>
+          <layout:Field field="sv1#area1#page40#enu16#fld57"/>
+          <layout:Link link="sv1#area1#page40#enu16#ln180"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page40#dau32">
+          <layout:Attribute attribute="groupName"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page40#inu16">
+          <layout:Attribute attribute="groupName"/>
+          <layout:Link link="sv1#area1#page40#inu16#ln195"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area1#page40#inu12">
+          <layout:Link link="sv1#area1#page40#inu12#ln187"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User2DefaultGroup.groupName"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

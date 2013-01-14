@@ -1,0 +1,54 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="464" gr:y="71" id="sv4#area5#page38" name="Editar An&#250;ncio">
+  <ContentUnits>
+    <EntryUnit gr:x="142" gr:y="11" id="sv4#area5#page38#enu18" name="Editar An&#250;ncio" linkOrder="sv4#area5#page38#enu18#ln94">
+      <Field id="sv4#area5#page38#enu18#fld45" name="T&#237;tulo:" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area5#page38#enu18#fld46" name="Descri&#231;&#227;o:" type="text" modifiable="true" preloaded="true" contentType="text/plain"/>
+      <Field id="sv4#area5#page38#enu18#fld47" name="Pre&#231;o:" type="float" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area5#page38#enu18#fld48" name="Data Submiss&#227;o:" type="date" modifiable="true" preloaded="true"/>
+      <Field id="sv4#area5#page38#enu18#fld49" name="Tipo:" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv4#area5#page38#enu18#ln94" name="Editar" to="sv4#mfu2" type="normal" validate="true">
+        <LinkParameter id="sv4#area5#page38#enu18#ln94#par95" name="dataSubmissao_dataSubmissao" source="sv4#area5#page38#enu18#fld48" target="sv4#mfu2.ent1#att6"/>
+        <LinkParameter id="sv4#area5#page38#enu18#ln94#par96" name="descricao_descricao" source="sv4#area5#page38#enu18#fld46" target="sv4#mfu2.ent1#att3"/>
+        <LinkParameter id="sv4#area5#page38#enu18#ln94#par97" name="nome_nome" source="sv4#area5#page38#enu18#fld45" target="sv4#mfu2.ent1#att2"/>
+        <LinkParameter id="sv4#area5#page38#enu18#ln94#par98" name="preco_preco" source="sv4#area5#page38#enu18#fld47" target="sv4#mfu2.ent1#att4"/>
+        <LinkParameter id="sv4#area5#page38#enu18#ln94#par99" name="tipo_tipo" source="sv4#area5#page38#enu18#fld49" target="sv4#mfu2.ent1#att8"/>
+      </Link>
+    </EntryUnit>
+    <DataUnit gr:x="0" gr:y="0" id="sv4#area5#page38#dau10" name="An&#250;ncio" entity="ent1">
+      <Selector id="sv4#area5#page38#dau10#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#area5#page38#dau10#su8#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#area5#page38#dau10#ln30" name="Link30" to="sv4#mfu2" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#area5#page38#dau10#ln31" name="Link31" to="sv4#area5#page38#enu18" type="transport" validate="true">
+        <LinkParameter id="sv4#area5#page38#dau10#ln31#par15" name="dataSubmissao_dataSubmissao" source="data.ent1#att6" target="sv4#area5#page38#enu18#fld48_slot"/>
+        <LinkParameter id="sv4#area5#page38#dau10#ln31#par16" name="descricao_descricao" source="data.ent1#att3" target="sv4#area5#page38#enu18#fld46_slot"/>
+        <LinkParameter id="sv4#area5#page38#dau10#ln31#par17" name="nome_nome" source="data.ent1#att2" target="sv4#area5#page38#enu18#fld45_slot"/>
+        <LinkParameter id="sv4#area5#page38#dau10#ln31#par18" name="preco_preco" source="data.ent1#att4" target="sv4#area5#page38#enu18#fld47_slot"/>
+        <LinkParameter id="sv4#area5#page38#dau10#ln31#par19" name="tipo_tipo" source="data.ent1#att8" target="sv4#area5#page38#enu18#fld49_slot"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#area5#page38#enu18">
+          <layout:Field field="sv4#area5#page38#enu18#fld45"/>
+          <layout:Field field="sv4#area5#page38#enu18#fld46"/>
+          <layout:Field field="sv4#area5#page38#enu18#fld47"/>
+          <layout:Field field="sv4#area5#page38#enu18#fld48"/>
+          <layout:Field field="sv4#area5#page38#enu18#fld49"/>
+          <layout:Link link="sv4#area5#page38#enu18#ln94"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

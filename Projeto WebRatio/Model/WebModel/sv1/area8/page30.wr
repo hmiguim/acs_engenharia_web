@@ -1,0 +1,38 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area8#page30" name="An&#250;ncio" landmark="false" gr:x="825" gr:y="265">
+  <ContentUnits>
+    <DataUnit id="sv1#area8#page30#dau25" name="Anuncio" linkOrder="sv1#area8#page30#dau25#ln156 sv1#area8#page30#dau25#ln163" gr:x="0" gr:y="0" entity="ent1" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att15 rel1#role1.userName">
+      <Selector id="sv1#area8#page30#dau25#su79" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area8#page30#dau25#su79#kcond31" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area8#page30#dau25#ln156" name="Mais do Utilizador..." to="sv1#area8#page32#dau26" type="normal" validate="true" gr:bendpoints="-112,205,467,-264;-356,124,181,-262;-476,294,103,-175">
+        <LinkParameter id="sv1#area8#page30#dau25#ln156#par146" name="AnuncioToUser.oid_KeyCondition18 [oid]" source="data.rel1#role1_userOID" target="sv1#area8#page32#dau26#su80#kcond32.userOID"/>
+      </Link>
+      <Link id="sv1#area8#page30#dau25#ln163" name="ELIMINAR An&#250;ncio" to="sv1#dlu1" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area8#page30#dau25#ln170" name="Link170" to="sv1#dlu6" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#area8#page30#dau25">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att15"/>
+          <layout:Attribute attribute="rel1#role1.userName"/>
+          <layout:Link link="sv1#area8#page30#dau25#ln156"/>
+          <layout:Link link="sv1#area8#page30#dau25#ln163"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

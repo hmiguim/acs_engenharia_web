@@ -1,0 +1,76 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Administrador" landmarks="sv1#page41 sv1#area8 sv1#area1 sv1#lou3" protected="true" secure="false" layout:style="WebRatio" layout:pageLayout="WebRatio/Basic" homePage="sv1#page41">
+  <OperationUnits>
+    <LogoutUnit id="sv1#lou3" name="Logout" gr:x="30" gr:y="-580" siteView="sv6" landmark="true">
+      <KOLink id="sv1#lou3#kln18" name="KOLink18" to="sv1#page41" automaticCoupling="true"/>
+    </LogoutUnit>
+    <DeleteUnit gr:x="1390" gr:y="180" id="sv1#dlu1" name="del_Imagens_Anuncio" entity="ent2">
+      <Selector id="sv1#dlu1#su84" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#dlu1#su84#rcond5" name="RoleCondition5" role="rel3#role5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#dlu1#oln15" name="OKLink15" to="sv1#dlu6" automaticCoupling="true"/>
+      <KOLink id="sv1#dlu1#kln21" name="KOLink21" to="sv1#area8#page30#dau25" automaticCoupling="true" gr:bendpoints="-176,58,144,120"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="1400" gr:y="20" id="sv1#dlu6" name="del_Anuncio" entity="ent1">
+      <Selector id="sv1#dlu6#su88" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#dlu6#su88#kcond37" name="KeyCondition37" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv1#dlu6#kln22" name="KOLink22" to="sv1#area8#page30#dau25" automaticCoupling="true" gr:bendpoints="-156,19,160,-76"/>
+      <OKLink id="sv1#dlu6#oln16" name="OKLink16" to="sv1#area8#page46" automaticCoupling="true"/>
+    </DeleteUnit>
+    <SelectorUnit gr:x="630" gr:y="640" id="sv1#seu4" name="Anuncios" entity="ent1" linkOrder="sv1#seu4#ln173 sv1#seu4#ln174">
+      <Selector id="sv1#seu4#su89" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#seu4#su89#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel1#role2"/>
+      </Selector>
+      <Link id="sv1#seu4#ln173" name="Link173" to="sv1#dlu8" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="108,14,24,-106"/>
+      <Link id="sv1#seu4#ln174" name="Link174" to="sv1#dlu7" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="-102,-20,90,-50"/>
+    </SelectorUnit>
+    <DeleteUnit gr:x="310" gr:y="660" id="sv1#dlu7" name="del_Anuncios" entity="ent1">
+      <Selector id="sv1#dlu7#su90" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#dlu7#su90#kcond38" name="KeyCondition38" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#dlu7#oln18" name="OKLink18" to="sv1#dlu9" automaticCoupling="true"/>
+      <KOLink id="sv1#dlu7#kln19" name="KOLink19" to="sv1#area8#page30#dau25" automaticCoupling="true" gr:bendpoints="42,-506,-732,40"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="700" gr:y="760" id="sv1#dlu8" name="del_Imagens_Anuncio" entity="ent2">
+      <Selector id="sv1#dlu8#su91" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#dlu8#su91#rcond7" name="RoleCondition7" role="rel3#role5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#dlu8#oln17" name="OKLink17" to="sv1#dlu7" automaticCoupling="true" gr:bendpoints="-420,-10,-14,90"/>
+      <KOLink id="sv1#dlu8#kln20" name="KOLink20" to="sv1#area8#page30#dau25" automaticCoupling="true" gr:bendpoints="520,-168,150,474"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="90" gr:y="660" id="sv1#dlu9" name="Eliminar Utilizador" entity="User">
+      <Selector id="sv1#dlu9#su92" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#dlu9#su92#kcond40" name="KeyCondition40" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <SetUnit gr:x="40" gr:y="-290" id="sv1#stu11" name="setCategoria" contextParameters="ctx2"/>
+    <ModifyUnit gr:x="2349" gr:y="280" id="sv1#mfu5" name="Editar Utilizador" entity="User">
+      <Selector id="sv1#mfu5#su71" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#mfu5#su71#kcond44" name="KeyCondition44" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv1#mfu5#oln19" name="OKLink19" to="sv1#dcnu1" automaticCoupling="true"/>
+    </ModifyUnit>
+    <DisconnectUnit gr:x="2359" gr:y="130" id="sv1#dcnu1" name="DisconnectUnit1" relationship="User2DefaultGroup">
+      <SourceSelector id="sv1#dcnu1#su75" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#dcnu1#su75#kcond45" name="KeyCondition45" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv1#dcnu1#su76" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#dcnu1#su76#kcond46" name="KeyCondition46" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv1#dcnu1#oln20" name="OKLink20" to="sv1#cnu1">
+        <LinkParameter id="sv1#dcnu1#oln20#par137" name="Source oid [User]_KeyCondition47 [oid] [User] [Source]" source="sourceuserOID" target="sv1#cnu1#su77#kcond47.userOID"/>
+      </OKLink>
+    </DisconnectUnit>
+    <ConnectUnit gr:x="2309" gr:y="-70" id="sv1#cnu1" name="ConnectUnit1" relationship="User2DefaultGroup" linkOrder="sv1#cnu1#ln206">
+      <SourceSelector id="sv1#cnu1#su77" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#cnu1#su77#kcond47" name="KeyCondition47" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv1#cnu1#su78" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#cnu1#su78#kcond48" name="KeyCondition48" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv1#cnu1#oln24" name="OKLink24" to="sv1#area1#page40" automaticCoupling="true"/>
+      <KOLink id="sv1#cnu1#kln27" name="KOLink27" to="sv1#area1#page48#seu8" automaticCoupling="true"/>
+      <Link id="sv1#cnu1#ln206" name="Link206" to="sv1#area1#page40#dau32" automaticCoupling="true" type="transport" validate="true"/>
+    </ConnectUnit>
+  </OperationUnits>
+</SiteView>
