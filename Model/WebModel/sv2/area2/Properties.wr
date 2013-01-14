@@ -1,0 +1,22 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2#area2" name="Moderator STUFF" landmarks="sv2#area2#page2" landmark="true" gr:x="310" gr:y="590" defaultPage="sv2#area2#page2">
+  <OperationUnits>
+    <CreateUnit id="sv2#area2#cru1" name="Criar Categoria" gr:x="0" gr:y="20" entity="ent3" skipBlankRecords="true">
+      <KOLink id="sv2#area2#cru1#kln7" name="KO-Link 4" to="sv2#area2#page2" gr:bendpoints="71,-39,-155,-52"/>
+      <OKLink id="sv2#area2#cru1#oln5" name="OK-Link 5" to="sv2#area2#page2" gr:bendpoints="31,37,-178,80"/>
+    </CreateUnit>
+    <DeleteUnit id="sv2#area2#dlu5" name="Eliminar Categoria" gr:x="532" gr:y="11" entity="ent3">
+      <Selector id="sv2#area2#dlu5#su11" booleanOperator="and">
+        <KeyCondition id="sv2#area2#dlu5#su11#kcond10" predicate="in"/>
+      </Selector>
+      <OKLink id="sv2#area2#dlu5#oln8" name="OK-Link 4" to="sv2#area2#page2" gr:bendpoints="-65,-43,137,-67"/>
+      <KOLink id="sv2#area2#dlu5#kln8" name="KO-Link 3" to="sv2#area2#page2" gr:bendpoints="-44,63,158,39"/>
+    </DeleteUnit>
+    <ModifyUnit gr:x="232" gr:y="326" id="sv2#area2#mfu4" name="Modificar Categoria" entity="ent3">
+      <Selector id="sv2#area2#mfu4#su31" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area2#mfu4#su31#kcond27" name="KeyCondition27" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#area2#mfu4#oln14" name="OKLink14" to="sv2#area2#page2" automaticCoupling="true" gr:bendpoints="-208,-8,-207,298;-124,-204,-123,102"/>
+      <KOLink id="sv2#area2#mfu4#kln16" name="KOLink16" to="sv2#area2#page20#enu11" automaticCoupling="true" gr:bendpoints="-104,56,226,67"/>
+    </ModifyUnit>
+  </OperationUnits>
+</Area>

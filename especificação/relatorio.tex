@@ -1,0 +1,869 @@
+\documentclass[a4paper,11pt,portuges,openright,openbib]{report}
+
+\usepackage[portuges]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+\usepackage[pdftex]{graphicx}
+\usepackage{acronym}
+\usepackage{color}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage[a4paper, pdftex, bookmarks, colorlinks, citecolor=darkblue, linkcolor=darkblue, urlcolor=darkblue, filecolor=darkblue]{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{mdwlist}
+\usepackage{colortbl}
+\usepackage{tocbibind}
+\usepackage{multirow}
+\usepackage[section,above,below]{placeins}
+\usepackage{enumerate}
+\usepackage{a4wide}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=3.5cm,bottom=3.5cm]{geometry}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\definecolor{darkblue}{rgb}{0,0,0.6}
+
+\def\titulo{Sistema de classificados online}
+\def\data{novembro, 2012}
+\def\alunoa{Carlos Sotelo (22783)}
+\def\alunob{Hugo Guimarães (22800)}
+\def\alunoc{João Sarmento (22767)}
+\def\alunod{Luís Machado (22785)}
+\def\alunoe{Raphael Rodrigues (22786)}
+
+\title{\titulo}
+\date{\data}
+\author{\alunoa \and \alunob \and \alunoc \and \alunod \and \alunoe}
+
+\begin{document}
+
+\begin{titlepage}
+
+\setlength{\unitlength}{1cm}
+\begin{picture}(0,0)
+
+\put(14,0){\line(0,-1){24.5}}
+\put(0,-12.2){\line(1,0){18}}
+\put(0,-16.2){\line(1,0){18}}
+\put(0,-12.2){\line(0,-1){4}}
+
+\put(0,-4){\includegraphics[height=1.5cm]{logo}}
+
+\begin{minipage}[t]{16cm}
+
+~
+
+\addvspace{4cm}
+
+\color{gray}\textbf{Universidade do Minho}
+
+\smallskip
+Mestrado em Engenharia Informática\\
+
+\smallskip
+
+Análise e Conceção de Software\\
+
+\bigskip
+\color{JungleGreen}
+{\LARGE \textbf{Engenharia Web}}
+
+\medskip
+\color{black}
+Ano Lectivo de 2012/13
+
+\addvspace{6cm}
+
+{\LARGE \textbf{ \titulo }}
+
+\addvspace{2.5cm}
+
+Grupo 5\\
+
+\alunoa\\
+\alunob\\
+\alunoc\\
+\alunod\\
+\alunoe\\
+
+\addvspace{0.7cm}
+
+\vspace{\fill}
+
+\data
+
+\end{minipage}
+\end{picture}
+\end{titlepage}
+
+% 2º pagina
+\thispagestyle{empty}
+
+\begin{flushright}
+\begin{tabular}{|p{4cm}|p{4cm}|}
+\hline
+Data de Receção & \\
+\hline
+Responsável & \\
+\hline
+Avaliação & \\
+\hline
+Observações & \\
+& \\
+& \\
+\end{tabular}
+\end{flushright}
+
+~
+
+\addvspace{8.4cm}
+
+{\LARGE \textbf{ \titulo}}
+
+\addvspace{2.5cm}
+
+Grupo 5\\
+
+\alunoa\\
+\alunob\\
+\alunoc\\
+\alunod\\
+\alunoe\\
+
+\addvspace{0.7cm}
+
+\vspace{\fill}
+
+\data
+
+\clearpage
+\pagenumbering{roman}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\clearpage
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\chapter{Especificação}
+\label{c:inic}
+\section{Especificação dos Grupos}
+\label{s:esp_grp}
+Como foi referido no enunciado do projeto a nossa aplicação, de classificados online, vai dispor de 4 grupos distintos de utilizadores:
+\begin{itemize}
+	\item \textbf{Administradores}; 
+	\item \textbf{Moderadores}; 
+	\item \textbf{Utilizadores com registo}; 
+	\item \textbf{Utilizadores sem registo}; 
+\end{itemize}
+Para cada um dos grupos será construída uma tabela com a especificação de cada um. Sendo que, em cada tabela encontraremos os seguintes campos: Nome, Descrição, Dados de perfil, Super-grupo, Sub-grupo, Casos de Uso, Direitos de acesso.
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}   & Administradores\\
+	\textbf{Descrição}  & Grupo de pessoal responsável por eliminar utilizadores registados que não obedeçam às regras da aplicação e por nomear e eliminar moderadores.\\
+	\textbf{Dados de Perfil}     & Primeiro nome, último nome, email, telefone, morada. Os dados de perfil são fornecidos pelo o utilizador.\\
+	\textbf{Super-grupo} & Nenhum. \\
+	\textbf{Sub-grupo} & Nenhum.\\
+	\textbf{Casos de uso mais relevantes} & ``Iniciar sessão'', ``Remover um utilizador registado'', ``Modificar dados de perfil'', ``Adicionar moderadores'', ``Remover moderadores''.\\
+	\textbf{Objetos acedidos em modo de leitura} & Anúncios e Utilizadores.\\
+	\textbf{Objetos acedidos em modo de gerir conteúdos} & Utilizadores.\\
+\hline
+\end{tabularx}
+\caption{Especificação do grupo - Administradores}
+\label{t:grp_admin}
+\end{table}
+
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}   & Moderadores\\
+	\textbf{Descrição}  & Grupo de pessoal responsável pela moderação dos anúncios, não permitindo a colocação de anúncios que não estejam de acordo regras da aplicação.\\
+	\textbf{Dados de Perfil}     & Primeiro nome, último nome, email, telefone, morada. Os dados de perfil são fornecidos pelo o utilizador.\\
+	\textbf{Super-grupo} & Nenhum. \\
+	\textbf{Sub-grupo} & Nenhum.\\
+	\textbf{Casos de uso mais relevantes} & ``Iniciar sessão'', ``Remover um anúncio'', ``Modificar dados de perfil'', ``Ver perfil'', ``Adicionar uma categoria'', ``Remover uma categoria''.\\
+	\textbf{Objetos acedidos em modo de leitura} & Anúncios e Utilizadores.\\
+	\textbf{Objetos acedidos em modo de gerir conteúdos} & Utilizadores.\\
+\hline
+\end{tabularx}
+\caption{Especificação do grupo - Moderadores}
+\label{t:gpr_mod}
+\end{table}
+
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}   & Utilizadores Registados\\
+	\textbf{Descrição}  & Grupo de utilizadores que adicionam, removem ou procuram anúncios.\\
+	\textbf{Dados de Perfil}     & Primeiro nome, último nome, email, telefone, localidade. Os dados de perfil são fornecidos pelo o utilizador.\\
+	\textbf{Super-grupo} & Nenhum. \\
+	\textbf{Sub-grupo} & Nenhum.\\
+	\textbf{Casos de uso mais relevantes} & ``Iniciar sessão'', ``Adicionar um anúncio'', ``Procurar um anúncio'', ``Editar um anúncio'', ``Remover um anúncio'', ``Modificar dados de perfil'', ``Procurar Utilizador''.\\
+	\textbf{Objetos acedidos em modo de leitura} & Anúncios e Utilizadores.\\
+	\textbf{Objetos acedidos em modo de gerir conteúdos} & Anúncios.\\
+\hline
+\end{tabularx}
+\caption{Especificação do grupo - Utilizadores Registados}
+\label{t:gpr_ur}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}   & Utilizadores Não Registados\\
+	\textbf{Descrição}  & Grupo de utilizadores que procuram anúncios.\\
+	\textbf{Dados de Perfil}     & Nenhum.\\
+	\textbf{Super-grupo} & Nenhum. \\
+	\textbf{Sub-grupo} & Nenhum.\\
+	\textbf{Casos de uso mais relevantes} & ``Procurar um anúncio'', ``Registar perfil''.\\
+	\textbf{Objetos acedidos em modo de leitura} & Anúncios.\\
+	\textbf{Objetos acedidos em modo de gerir conteúdos} & Nenhum.\\
+\hline
+\end{tabularx}
+\caption{Especificação do grupo - Utilizadores Não Registados}
+\label{t:gpr_unr}
+\end{table}
+
+\section{Especificação dos Casos de Uso}
+\label{s:esp_caso_uso}
+
+Nesta secção serão especificados todos os casos de uso para a aplicação identificados na especificação dos grupos de utilizadores. Cada tabela representa um caso de uso da aplicação tendo os seguintes campos associados: nome, propósito, pré-condição, pós-condição e um fluxo de eventos que descreve tanto o comportamento normal daquele caso de uso, como as alternativas e exceções que possam surgir nos cenários descritos.
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3.5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Iniciar Sessão\\
+	\textbf{Propósito}		& Para aceder ao sistema.\\
+	\textbf{Pré-condição}		& O utilizador está registado no sistema.\\
+	\textbf{Pós-condição}		& O utilizador inicia a sessão no sistema e acede à siteview específica do seu grupo. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção iniciar sessão na aplicação. \\
+							& 2. Sistema disponibiliza um formulário para o utilizador preencher.\\
+							& 3. Utilizador introduz os dados.\\
+							& 4. Sistema valida dos dados introduzidos.\\
+							& 5. Sistema inicia sessão.\\
+							& \textbf{Alternativa [Sistema não válida os dados]:}\\
+							& 4.1. Sistema informa que os dados estão incorretos.\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Iniciar Sessão}
+\label{t:uc-is}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Remover utilizador registado\\
+	\textbf{Propósito}		& Conseguir eliminar um utilizador cuja a sua conduta não tenha sido a mais apropriada.\\
+	\textbf{Pré-condição}		& O utilizador está registado no sistema.\\
+	\textbf{Pós-condição}		& O utilizador foi removido do sistema. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Administrador seleciona a opção ``Remover Utilizador'' na aplicação. \\
+							& 2. Sistema disponibiliza um campo para procurar utilizadores.\\
+							& 3. Administrador fornece os dados do utilizador.\\
+							& 4. Sistema devolve os resultados da pesquisa.\\
+							& 5. Administrador seleciona o utilizador.\\
+							& 6. Sistema remove o utilizador.\\
+							& \textbf{Alternativa [Utilizador não encontrado]:}\\
+							& 4.1. Sistema informa que nenhum utilizador corresponde à pesquisa\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Remover utilizador registado}
+\label{t:uc-rur}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Registar perfil\\
+	\textbf{Propósito}		& É importante para ter acesso a funcionalidades exclusivas de utilizador.\\
+	\textbf{Pré-condição}		& \\
+	\textbf{Pós-condição}		& Utilizador fica registado no sistema.\\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Registo'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário.\\
+							& 3. Utilizador introduz dados relativos ao registo.\\
+							& 4. Sistema valida os dados.\\
+							& 5. Sistema regista o utilizador na aplicação.\\
+							& \textbf{Alternativa [Dados inválidos]:}\\
+							& 4.1. Sistema informa que os dados introduzidos não são válidos.\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Registar Perfil}
+\label{t:uc-rp}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Modificar perfil\\
+	\textbf{Propósito}		& Editar os dados que são passíveis de sofrer alterações.\\
+	\textbf{Pré-condição}		& O utilizador está registado no sistema.\\
+	\textbf{Pós-condição}		& O sistema regista alterações. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Modificar perfil'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário com os campos para o utilizador modificar.\\
+							& 3. Utilizador introduz os dados a alterar e as suas credenciais.\\
+							& 4. Sistema valida os dados.\\
+							& 5. Sistema regista as alterações.\\
+							& \textbf{Alternativa [Sistema não válida os dados]:}\\
+							& 4.1. Sistema informa que os dados introduzidos não são válidos\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Modificar Perfil}
+\label{t:uc-mf}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Adicionar moderador\\
+	\textbf{Propósito}		& Permitir que haja moderadores na aplicação de forma a controlar os anúncios colocados.\\
+	\textbf{Pré-condição}		& O utilizador está registado no sistema.\\
+	\textbf{Pós-condição}		& O utilizador fica com permissões de moderador. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Administrador seleciona a opção ``Adicionar Moderador'' na aplicação. \\
+							& 2. Sistema disponibiliza um campo para procurar utilizadores.\\
+							& 3. Administrador fornece os dados do utilizador.\\
+							& 4. Sistema devolve os resultados da pesquisa.\\
+							& 5. Administrador seleciona o utilizador.\\
+							& 6. Sistema adiciona-o como moderador.\\
+							& \textbf{Alternativa [Utilizador não encontrado]:}\\
+							& 4.1. Sistema informa que nenhum utilizador corresponde à pesquisa\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Adicionar Moderador}
+\label{t:uc-am}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Remover moderador\\
+	\textbf{Propósito}		& Retirar as permissões de um moderador sempre que este tenha uma conduta imprópria.\\
+	\textbf{Pré-condição}		& O utilizador é um moderador no sistema.\\
+	\textbf{Pós-condição}		& O utilizador fica sem permissões de moderador. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Administrador seleciona a opção ``Remover Moderador'' na aplicação. \\
+							& 2. Sistema disponibiliza um campo para procurar utilizadores.\\
+							& 3. Administrador fornece os dados do utilizador.\\
+							& 4. Sistema devolve os resultados da pesquisa.\\
+							& 5. Administrador seleciona o utilizador.\\
+							& 6. Sistema remove-o como moderador.\\
+							& \textbf{Alternativa [Utilizador não encontrado]:}\\
+							& 4.1. Sistema informa que nenhum utilizador corresponde à pesquisa\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Remover Moderador}
+\label{t:uc-rm}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Adcionou uma categoria\\
+	\textbf{Propósito}		& Separar os anúncios por categorias para melhor pesquisa.\\
+	\textbf{Pré-condição}		& O moderador tem a sessão iniciada.\\
+	\textbf{Pós-condição}		& O moderador adicionou uma categoria no sistema. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Moderador seleciona a opção ``Adicionar Categoria'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário para o utilizador preencher.\\
+							& 3. Moderador fornece os dados da categoria.\\
+							& 4. Sistema valida os dados.\\
+							& 5. Sistema cria a categoria.\\
+							& \textbf{Alternativa [Categoria já existe]:}\\
+							& 4.1. Sistema informa que categoria já existe\\
+							& 4.2. Volta a 2.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Adicionar uma categoria}
+\label{t:uc-ac}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Remover uma categoria\\
+	\textbf{Propósito}		& Eliminar uma categoria que não tenha mais correspondência.\\
+	\textbf{Pré-condição}		& O moderador tem a sessão iniciada.\\
+	\textbf{Pós-condição}		& O moderador remove uma categoria no sistema. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Moderador seleciona a opção ``Eliminar Categoria'' na aplicação. \\
+							& 2. Sistema disponibiliza uma lista de categorias existentes.\\
+							& 3. Moderador escolhe a categoria a eliminar.\\
+							& 4. Sistema pede a confirmação ao moderador.\\
+							& 5. Moderador confirma.\\
+							& 6. Sistema remove a categoria.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Remover uma categoria}
+\label{t:uc-rc}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Editar uma categoria\\
+	\textbf{Propósito}		& Editar uma categoria para melhor.\\
+	\textbf{Pré-condição}		& O moderador tem a sessão iniciada.\\
+	\textbf{Pós-condição}		& O moderador remove uma categoria no sistema. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Moderador seleciona a opção ``Eliminar Categoria'' na aplicação. \\
+							& 2. Sistema disponibiliza uma lista de categorias existentes.\\
+							& 3. Moderador escolhe a categoria a eliminar.\\
+							& 4. Sistema pede a confirmação ao moderador.\\
+							& 5. Moderador confirma.\\
+							& 6. Sistema remove a categoria.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Remover uma categoria}
+\label{t:uc-rc}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Adicionar um anúncio\\
+	\textbf{Propósito}		& Para que a aplicação tenha algum sentido é necessário ao utilizador poder adicionar anúncios.\\
+	\textbf{Pré-condição}		& O utilizador tem a sessão iniciada.\\
+	\textbf{Pós-condição}		& O utilizador adicionou um anúncio no sistema. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Adicionar Anúncio'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário para o utilizador preencher.\\
+							& 3. Utilizador fornece os dados do anúncio.\\
+							& 4. Sistema valida os dados.\\
+							& 5. Sistema apresenta proposta de possíveis anúncios relacionados.\\
+							& 6. Utilizador não aceita nenhuma proposta possível.\\
+							& 7. Sistema cria o anúncio.\\
+							& \textbf{Exceção [Utilizador aceita propostas possíveis]:}\\
+							& 6.1. \begin{math}<<\end{math}include\begin{math}>>\end{math} Negociar \\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Adicionar um Anúncio}
+\label{t:uc-aa}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Remover um anúncio\\
+	\textbf{Propósito}		& Se a venda, compra ou troca foi feita é necessário tirar o anúncio do sistema.\\
+	\textbf{Pré-condição}		& O anúncio existe no sistema.\\
+	\textbf{Pós-condição}		& O anúncio foi removido do sistema. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Ver Anúncios'' na aplicação. \\
+							& 2. Sistema disponibiliza os anúncios do utilizador.\\
+							& 3. Utilizador seleciona o anúncio a remover.\\
+							& 4. Sistema remove o anúncio.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Remover um Anúncio}
+\label{t:uc-ra}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Procurar um anúncio\\
+	\textbf{Propósito}		& Permitir ao utilizador procurar um anúncio.\\
+	\textbf{Pré-condição}		& \\
+	\textbf{Pós-condição}		& Sistema fornece uma lista de anúncios. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Procurar Anúncios'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário de pesquisa ao utilizador.\\
+							& 3. Utilizador introduz dados no formulário.\\
+							& 4. Sistema disponibiliza uma lista de anúncios ao utilizador.\\
+							& \textbf{Exceção [Anúncio não encontrado]:}\\
+							& 4.1. Sistema notifica que nenhum anúncio corresponde à pesquisa.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Procurar um Anúncio}
+\label{t:uc-pa}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Editar um anúncio\\
+	\textbf{Propósito}		& Permitir ao utilizador editar um anúncio, já que este é passível de alterações.\\
+	\textbf{Pré-condição}		& O anúncio existe no sistema.\\
+	\textbf{Pós-condição}		& O anúncio foi editado. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Ver Anúncios'' na aplicação. \\
+							& 2. Sistema disponibiliza os anúncios do utilizador.\\
+							& 3. Utilizador seleciona o anúncio a editar.\\
+							& 4. Sistema disponibiliza o formulário para editar os dados.\\
+							& 5. Utilizador edita os dados.\\
+							& 6. Sistema valida os dados.\\
+							& 4. Sistema regista alterações ao anúncio.\\
+							& \textbf{Alternativa [Dados inválidos]:}\\
+							& 6.1. Sistema informa que os dados introduzidos não são válidos.\\
+							& 6.2. Volta a 4.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Editar um Anúncio}
+\label{t:uc-ea}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Procurar um utilizador\\
+	\textbf{Propósito}		& Permitir procurar um certo utilizador de modo a ver os anúncios colocados por ele.\\
+	\textbf{Pré-condição}		& O Utilizador tem sessão iniciada.\\
+	\textbf{Pós-condição}		& Sistema devolve uma lista de utilizadores. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Procurar Utilizador'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário de pesquisa ao utilizador.\\
+							& 3. Utilizador introduz dados no formulário.\\
+							& 4. Sistema disponibiliza uma lista de utilizadores.\\
+							& \textbf{Exceção [Utilizador não encontrado]:}\\
+							& 4.1. Sistema notifica que nenhum utilizador corresponde à pesquisa.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Procurar um Utilizador}
+\label{t:uc-pu}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Negociar\\
+	\textbf{Propósito}		& Permitir ao utilizador contactar outro utilizador para fazer uma proposta pelo anúncio.\\
+	\textbf{Pré-condição}		& O Utilizador tem sessão iniciada.\\
+	\textbf{Pós-condição}		& A proposta foi enviada. \\
+	\textbf{Fluxo de eventos}	& \textbf{Comportamento normal:} \\
+							& 1. Utilizador seleciona a opção ``Negociar'' na aplicação. \\
+							& 2. Sistema disponibiliza um formulário ao utilizador.\\
+							& 3. Utilizador introduz dados no formulário.\\
+							& 4. Sistema regista a proposta.\\
+							& 5. Sistema notifica utilizador proprietário do anúncio.\\
+\hline
+\end{tabularx}
+\caption{Caso de Uso -  Negociar}
+\label{t:uc-neg}
+\end{table}
+
+\section{Especificação do Dicionário de Dados}
+\label{s:dic_dados}
+
+Nesta secção será especificado o dicionário de dados da aplicação. Cada tabela representa um requisito da aplicação tendo os seguintes campos associados: nome, sinónimo, descrição, exemplo, propriedades, relações, componentes, generalização e especificação.
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Anúncio\\
+	\textbf{Sinónimo}		& Classificado, Artigo, Produto\\
+	\textbf{Descrição}		& Anúncio de venda ou compra de um artigo por parte de um utilizador.\\
+	\textbf{Exemplo}			& Vendo placa gráfica XYZ\\
+							& 23 Dez 2011\\
+							& Placa gráfica ainda funcional com capacidade de X mb de ...\\
+	\textbf{Propriedades} 	& \\ 
+	Nome & Nome do anúncio\\
+	Data & Data da submissão do anúncio\\
+	Imagem & Imagem ou imagens do anúncio\\
+	Descrição & Descrição detalhada do artigo anunciado. \\
+	\textbf{Relações}		& \\
+	UtilizadorAnúncio & Relaciona o anúncio ao utilizador proprietário do mesmo.\\
+	CategoriaAnúncio & Relaciona o Anúncio a uma categoria\\
+	\textbf{Componentes}		& Nenhuma.\\
+	\textbf{Generalização} & Nenhuma. \\
+	\textbf{Especificações} & \\
+	Compro & Anúncio relativo a uma compra de um artigo\\
+	Vendo & Anúncio relativo a uma venda de um artigo\\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Anúncio}
+\label{t:dc-anuncio}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Vendo\\
+	\textbf{Sinónimo}		& Nenhum\\
+	\textbf{Descrição}		& Os Anúncios da categoria Vendo são, tal como o nome indica, todos aqueles Anúncios em que o Utilizador se propõe a vender determinado artigo\\
+	\textbf{Exemplo}			& \\
+	\textbf{Propriedades} 	& \\
+	Preço & Proposta de preço para a venda do artigo anunciado\\
+	TipoPreco & Explicita se o preço anunciado é fixo ou flexível\\
+	\textbf{Relações}		& \\
+	UtilizadorAnúncio & Relaciona o anúncio ao utilizador proprietário do mesmo.\\
+	CategoriaAnúncio & Relaciona o Anúncio a uma categoria\\
+	\textbf{Componentes}		& Nenhuma. \\
+	\textbf{Generalizações} & Anúncio. \\
+	\textbf{Especificações} & \\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Vendo}
+\label{t:dc-vendo}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Compro\\
+	\textbf{Sinónimo}		& Nenhum\\
+	\textbf{Descrição}		& Os Anúncios da categoria Compro são, tal como o nome indica, todos aqueles Anúncios em que o Utilizador se propõe a comprar determinado artigo\\
+	\textbf{Exemplo}			&  \\
+	\textbf{Propriedades} 	& \\
+	Preço & Proposta de preço para a venda do artigo anunciado\\
+	TipoPreco & Explicita se o preço anunciado é fixo ou flexível\\
+	\textbf{Relações}		& \\
+	UtilizadorAnúncio & Relaciona o anúncio ao utilizador proprietário do mesmo.\\
+	CategoriaAnúncio & Relaciona o Anúncio a uma categoria\\
+	\textbf{Componentes}		& Nenhuma. \\
+	\textbf{Generalizações} & Anúncio. \\
+	\textbf{Especificações} & \\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Compro}
+\label{t:dc-compro}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Administrador\\
+	\textbf{Sinónimo}		& Nenhum\\
+	\textbf{Descrição}		& O administrador é um utilizador com mais permissões que o utilizador base e, tal como o nome indica, é quem irá administrar o sistema, gerindo os outros utilizadores.\\
+	\textbf{Exemplo}			&  \\
+	\textbf{Propriedades} 	& \\
+	Telefone & Número de telefone do administrador\\
+	Morada & Morada do administrador\\
+	\textbf{Relações}		& \\
+	\textbf{Componentes}		& Nenhuma. \\
+	\textbf{Generalizações} & Utilizador. \\
+	\textbf{Especificações} & Nenhuma.\\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Administrador}
+\label{t:dc-admin}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Moderador\\
+	\textbf{Sinónimo}		& Nenhum\\
+	\textbf{Descrição}		& O Moderador é quem modera os Anúncios e tem como obrigação gerir determinada Categoria(s).\\
+	\textbf{Exemplo}			&  \\
+	\textbf{Propriedades} 	& \\
+	Telefone & Número de telefone do moderador\\
+	\textbf{Relações}		& \\
+	ModeradoresCategorias & Relaciona os moderadores a uma ou mais categoria de anúncios.\\
+	\textbf{Componentes}		& Nenhuma. \\
+	\textbf{Generalizações} & Utilizador. \\
+	\textbf{Especificações} & Nenhuma.\\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Moderador}
+\label{t:dc-moderador}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Utilizador\\
+	\textbf{Sinónimo}		& Nenhum\\
+	\textbf{Descrição}		& O Utilizador é, tal como o nome indica, quem irá usar o sistema.\\
+	\textbf{Exemplo}			& \\
+	\textbf{Propriedades} 	& \\
+	Nome & Nome do utilizador\\
+	Palavra-passe & Palavra Pass para o Utilizador aceder à sua conta\\
+	Email & email do utilizador\\
+	Avatar & imagem ou avatar do utilizador\\
+	\textbf{Relações}		& \\
+	ListaAnuncios & Relaciona o  Utilizador à sua lista de Anúncios, ou seja, aos produtos que  ele anuncia vender ou comprar.\\
+	\textbf{Componentes}		& Nenhuma. \\
+	\textbf{Generalizações} & Nenhuma. \\
+	\textbf{Especificações} & \\
+	Moderador & \\
+	Administrador & \\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Utilizador}
+\label{t:dc-user}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{3,5cm} X p{6cm} X }
+\hline
+	\textbf{Nome}			& Categoria\\
+	\textbf{Sinónimo}		& Nenhum\\
+	\textbf{Descrição}		& A Categoria é a entidade que agrupa os Anúncios por propriedades ou tipos.\\
+	\textbf{Exemplo}			& \\
+	\textbf{Propriedades} 	& \\
+	Nome & Nome da categoria\\
+	Descrição & Descrição da categoria\\
+	\textbf{Relações}		& \\
+	ListaAnuncios & Relaciona a categoria à sua lista de anúncios, ou seja, aos produtos tanto para venda como para compra  que pertençam à categoria.\\
+	ModeradoresCategorias & Relaciona os  Moderadores a uma ou mais Categoria de Anúncios.\\
+	\textbf{Componentes}		& Nenhuma. \\
+	\textbf{Generalizações} & Nenhuma. \\
+	\textbf{Especificações} & Nenhuma.\\
+\hline
+\end{tabularx}
+\caption{Dicionário de dados - Categoria}
+\label{t:dc-cat}
+\end{table}
+
+\section{Especificação das Site View}
+\label{s:esp_site_view}
+
+Nesta secção serão especificados todos as site views da aplicação. Cada tabela representa uma site view diferente da aplicação tendo os seguintes campos associados: nome, descrição, grupo de utilizadores, os casos de uso e uma site view mapa que contém, o nome da área, a descrição da área, os objetos acedidos e a prioridade.
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}			& Utilizadores não registados\\
+	\textbf{Descrição}		& Inclui as páginas que os utilizadores não registados têm acesso para poder pesquisar por anúncios.\\
+	\textbf{Grupo de utilizadores}		& Utilizadores não registados.\\
+	\textbf{Casos de uso}		& ``Procurar anúncio'', ``Registar perfil''. \\
+	\textbf{Mapa da Site View}	& \\
+\end{tabularx}
+\begin{tabularx}{\linewidth}{X p{8.5cm} X X X}
+	\textbf{Nome} & \textbf{Descrição} & \textbf{Objetos acedidos} & \textbf{Prioridade}\\
+	Home			& Página principal que contém uma área de pesquisa rápida, as categorias dos anúncios e os destaques & Anúncios & Alta\\
+	Anúncios & Contém uma lista de anúncios ordenado por um critério, em que cada anuncio possui um link para ver os respectivos detalhes.
+Possui uma área de pesquisa avançada. & Anúncio & Alta \\
+	Anúncio & Possui toda a informação relativa ao anúncio e ao vendedor/comprador. & Anúncio & Alta\\
+	Registo & Formulário com dados de novo utilizador. & Utilizador & Alta\\
+\hline
+\end{tabularx} 
+\caption{Site View - Utilizadores não registado}
+\label{t:sv-usr}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}			& Utilizadores registados\\
+	\textbf{Descrição}		& Inclui  as páginas de gestão de anúncios (adicionar, editar e remover). Inclui as páginas de pesquisa de anúncios e ainda a gestão do perfil do utilizador e procura de utilizadores.\\
+	\textbf{Grupo de utilizadores}		& Utilizadores registados.\\
+	\textbf{Casos de uso}		& ``Iniciar sessão'', ``Adicionar um anúncio'', ``Procurar um anúncio'', ``Editar um anúncio'', ``Remover um anúncio'', ``Modificar dados de perfil'', ``Procurar Utilizador'', ``Ver perfil'' \\
+	\textbf{Mapa da Site View}	& \\
+\end{tabularx}
+\begin{tabularx}{\linewidth}{X p{8.5cm} X X X}
+	\textbf{Nome} & \textbf{Descrição} & \textbf{Objetos acedidos} & \textbf{Prioridade}\\
+	Home			& Página principal que contém uma área de pesquisa rápida, as categorias dos anúncios e os destaques. Possui um link para aceder ao perfil do utilizador. & Anúncio, Utilizador & Alta\\
+	Anúncios & Contém uma lista de anúncios ordenado por um critério, em que cada anuncio possui um link para ver os respectivos detalhes.
+Possui uma área de pesquisa avançada. & Anúncio & Alta \\
+	Anúncio & Possui toda a informação relativa ao anúncio e ao vendedor/comprador. & Anúncio & Alta\\
+	Registo & Formulário com dados de novo utilizador. & Utilizador & Alta\\
+	Iniciar Sessão & Formulário para introduzir os dados e iniciar sessão. & Utilizador & Alta \\
+	Perfil & Possui a informação do utilizador com a possibilidade de gerir o respectivo perfil e os anúncios do utilizador. Para cada anúncio um link para remover e editar anúncio. & Utilizador, Anúncio & Alta\\
+	Adicionar um anúncio & O utilizador tem a possibilidade de adicionar um anuncio através de um formulário. & Anúncio & Alta\\
+	Edição de anúncio & O utilizador tem possibilidade de editar ou remover um anúncio criado por si. & Anúncio & Alta \\
+\hline
+\end{tabularx} 
+\caption{Site View - Utilizadores registado}
+\label{t:sv-ur}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}			& Moderador\\
+	\textbf{Descrição}		& Permite visualizar os anúncios  e remover anúncio que não respeitem as regras da aplicação.\\
+	\textbf{Grupo de utilizadores}	& Moderadores.\\
+	\textbf{Casos de uso}		& ``Iniciar sessão'', ``Modificar dados de perfil'', ``Remover um anúncio'', ``Ver perfil'', ``Adicionar uma categoria'', ``Remover uma categoria'' \\
+	\textbf{Mapa da Site View}	& \\
+\end{tabularx}
+\begin{tabularx}{\linewidth}{X p{8.5cm} X X X}
+	\textbf{Nome} & \textbf{Descrição} & \textbf{Objetos acedidos} & \textbf{Prioridade}\\
+	Home			& Página principal que contém uma área de pesquisa rápida, as categorias dos anúncios e os destaques. & Anúncio & Alta\\
+	Anúncios & Contém uma lista de anúncios ordenado por um critério, em que cada anuncio possui um link para ver os respectivos detalhes.
+Possui uma área de pesquisa avançada. & Anúncio & Alta \\
+	Anúncio & Possui toda a informação relativa ao anúncio e ao vendedor/comprador. & Anúncio & Alta\\
+	Iniciar Sessão & Formulário para introduzir os dados e iniciar sessão. & Utilizador & Alta \\
+	Perfil & Possui a informação do utilizador com a possibilidade de gerir o respectivo perfil e os anúncios do utilizador. Para cada anúncio um link para remover anúncio. & Utilizador, Anúncio & Alta\\
+	Remover anúncio & O moderador tem possibilidade de remover qualquer tipo de anúncio. & Anúncio & Alta\\
+	Gerir Categorias & O moderador tem possibilidade de adicionar ou remover um categoria & Categoria & Alta\\
+\hline
+\end{tabularx} 
+\caption{Site View - Moderador}
+\label{t:sv-m}
+\end{table}
+
+\begin{table}[htdp]
+\begin{tabularx}{\linewidth}{ p{4cm} X p{5cm} X }
+\hline
+	\textbf{Nome}			& Administrador\\
+	\textbf{Descrição}		& Inclui todas as funcionalidades de gestão de utilizadores e moderadores da aplicação.\\
+	\textbf{Grupo de utilizadores}	& Administradores.\\
+	\textbf{Casos de uso}		& ``Iniciar sessão'', ``Remover um utilizador registado'', ``Modificar dados de perfil'', ``Adicionar moderadores'', ``Remover moderadores''.\\
+	\textbf{Mapa da Site View}	& \\
+\end{tabularx}
+\begin{tabularx}{\linewidth}{X p{8.5cm} X X X}
+	\textbf{Nome} & \textbf{Descrição} & \textbf{Objetos acedidos} & \textbf{Prioridade}\\
+	Home			& Página principal que contém uma área de pesquisa rápida, as categorias dos anúncios e os destaques. & Anúncio & Alta\\
+	Anúncios & Contém uma lista de anúncios ordenado por um critério, em que cada anuncio possui um link para ver os respectivos detalhes.
+Possui uma área de pesquisa avançada. & Anúncio & Alta \\
+	Iniciar Sessão & Formulário para introduzir os dados e iniciar sessão. & Utilizador & Alta \\
+	Perfil & Possui a informação do utilizador com a possibilidade de gerir o respectivo perfil. & Utilizador & Alta\\
+	Listagem de utilizadores & Área de gestão dos moderadores sendo possível adicionar e remover moderadores para qualquer um dos registos. & Utilizadores & Alta\\
+\hline
+\end{tabularx} 
+\caption{Site View - Administrador}
+\label{t:sv-a}
+\end{table}
+
+\section{Especificação da Style Guidelines}
+\label{s:esp_sty_guid}
+
+A style guidelines estabele as regras de apresentação das páginas, a serem usadas na produção do interface da app. Nesta seção seram mostradas 4 mockups pertencentes à Home, Adicionar um anúncio, Pesquisar e Registar um utilizador. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{index}
+\caption{Home}
+\label{default}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{addAnuncio}
+\caption{Adicionar uma anúncio}
+\label{default}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{Pesquisa}
+\caption{Pesquisar}
+\label{default}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{addNewUser}
+\caption{Registar um utilizador}
+\label{default}
+\end{center}
+\end{figure}
+
+\bibliographystyle{ieeetr}
+
+\end{document}
